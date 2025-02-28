@@ -6,11 +6,10 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses = null;
+	private String courses = null ;
 	private int balance;
-	private int courseCost = 600;
+	private static int courseCost = 600;
 	private static int id = 1000;
-	
 	//constructor
 	public Student() {
 		Scanner sc = new Scanner(System.in);
@@ -23,18 +22,19 @@ public class Student {
 		System.out.println("1 - Freshman\n2 - Sophmore\n3 - Junior\n4- Senior\nEnter student class level : ");
 		this.gradeYear = sc.nextInt();
 		
-		System.out.println("My Name is : " + firstName +" "+ lastName+ " "+ " and I am in " + gradeYear +" year"+ " my ID is : " + studentID);
-		
+		setStudentID();
 		
 	}
 	
-	//ID
+	
+	//generating ID
 	
 	public void setStudentID() {
 		id++;
 		this.studentID =  gradeYear + "" + id;
 		
 	}
+	
 	
 	//enrolling in courses 
 	public void enroll() {
@@ -55,12 +55,9 @@ public class Student {
 	
 			
 			
-		System.out.println("Enrolled in : "+ courses);
-		
 		
 		
 	}
-	
 	//balance 
 	
 	public void viewBalance() {
@@ -80,6 +77,19 @@ public class Student {
 		balance = balance - payment;
 		System.out.println("Thank you for your payment of $"+payment);
 		viewBalance();
+	}
+	
+	
+	// show status 
+	
+	public String showInfo() {
+		return "Name: "+firstName+" " +lastName +
+				"\nGrade Level : "+ gradeYear+
+				"\nStudent ID : " + studentID+
+				"\nCourses Enrolled : " + courses + 
+				"\nBalance : $"+balance;
+		
+	}
 	
 	
 	

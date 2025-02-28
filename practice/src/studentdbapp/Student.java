@@ -5,10 +5,11 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private int gradeYear;
-	private int id;
+	private String studentID;
 	private String courses;
 	private int balance;
 	private int courseCost = 600;
+	private static int id = 1000;
 	
 	//constructor
 	public Student() {
@@ -22,8 +23,14 @@ public class Student {
 		System.out.println("1 - Freshman\n2 - Sophmore\n3 - Junior\n4- Senior\nEnter student class level : ");
 		this.gradeYear = sc.nextInt();
 		
-		System.out.println("My Name is : " + firstName +" "+ lastName+ " "+ " and I am in " + gradeYear +" year");
+		System.out.println("My Name is : " + firstName +" "+ lastName+ " "+ " and I am in " + gradeYear +" year"+ " my ID is : " + studentID);
 		
+		
+	}
+	
+	public void setStudentID() {
+		id++;
+		this.studentID =  gradeYear + "" + id;
 		
 	}
 	

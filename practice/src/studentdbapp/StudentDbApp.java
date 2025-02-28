@@ -7,6 +7,7 @@ public class StudentDbApp {
 		
 		Student s1 = new Student();
 		s1.enroll();
+		s1.payTuition();
 
 	}
 

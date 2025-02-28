@@ -56,10 +56,31 @@ public class Student {
 			
 			
 		System.out.println("Enrolled in : "+ courses);
-		System.out.println("Tuition Balance : "+ balance);
+		
 		
 		
 	}
+	
+	//balance 
+	
+	public void viewBalance() {
+		System.out.println("Your balance is : "+ balance);
+	}
+	
+	
+	
+	
+	// Paying tuition
+	
+	public void payTuition() {
+		viewBalance();
+		System.out.print("Enter your payment:$");
+		Scanner sc = new Scanner(System.in);
+		int payment = sc.nextInt();
+		balance = balance - payment;
+		System.out.println("Thank you for your payment of $"+payment);
+		viewBalance();
+	
 	
 	
 
